@@ -14,7 +14,6 @@
 */
 void call(String img, Closure body){
   
-  echo "**************** the docker image   ****************"${img}
   config.images ?: { error "SDP Image Config not defined in Pipeline Config" } ()
   
   def sdp_img_reg = config.images.registry ?:
