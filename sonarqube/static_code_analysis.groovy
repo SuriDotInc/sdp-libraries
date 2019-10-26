@@ -16,6 +16,9 @@ def call(){
     inside_sdp_image "sonar-scanner", {
       withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'token', usernameVariable: 'user')]) {
         withSonarQubeEnv("SonarQube"){
+          echo "**************** The ENV VARS -- START ****************"
+             sh 'printenv|sort'
+          echo "**************** The ENV VARS -- END   ****************"
           unstash "workspace"
           try{ unstash "test-results" }catch(ex){}
           sh "mkdir -p empty"
