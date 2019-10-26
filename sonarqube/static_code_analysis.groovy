@@ -18,9 +18,13 @@ def call(){
         withSonarQubeEnv("SonarQube"){
           echo "**************** The ENV VARS -- START ****************"
              sh 'printenv|sort'
+          echo "DOLLAR USER :: "$user
+          echo "DOLLAR TOKEN :: "$token
+          echo "DOLLAR reponame :: "$env.REPO_NAME
+          echo "DOLLAR BRANCH_NAME :: "$env.BRANCH_NAME
           echo "**************** The ENV VARS -- END   ****************"
-          unstash "workspace"
-          try{ unstash "test-results" }catch(ex){}
+          // unstash "workspace"
+          // try{ unstash "test-results" }catch(ex){}
           sh "mkdir -p empty"
           projectKey = "$env.REPO_NAME:$env.BRANCH_NAME".replaceAll("/", "_")
           projectName = "$env.REPO_NAME - $env.BRANCH_NAME"
