@@ -38,7 +38,7 @@ def call(){
           sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
           sh 'cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
           sh 'id'
-          sh 'chmod ugo+x /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
+          sh 'chmod -R ugo+x /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
           sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
           sh script
             
