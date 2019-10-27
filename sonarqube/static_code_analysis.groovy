@@ -35,10 +35,9 @@ def call(){
            
           if (!fileExists("sonar-project.properties"))
             script += "-Dsonar.sources=\"./src\""
-
+          sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
+          sh 'cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
           sh script
-          sh 'ls -lartR'
-          sh 'pwd'
             
         }
         timeout(time: 1, unit: 'HOURS') {
