@@ -37,6 +37,8 @@ def call(){
             script += "-Dsonar.sources=\"./src\""
           sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
           sh 'cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
+          sh 'chmod 775 /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
+          sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
           sh script
             
         }
