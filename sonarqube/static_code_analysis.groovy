@@ -35,12 +35,12 @@ def call(){
            
           if (!fileExists("sonar-project.properties"))
             script += "-Dsonar.sources=\"./src\""
-          sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
-          sh 'cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh'
-          sh 'id'
-          sh 'cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/jenkins-log.txt'
-          sh 'chmod -R ugo+x /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
-          sh 'ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp'
+          sh "ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp"
+          sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/durable*/script.sh"
+          sh "id"
+          sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/config.json"
+          sh "chmod -R ugo+x /var/lib/jenkins/workspace/JenkinsDemo_master@tmp"
+          sh "ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp"
           sh script
             
         }
