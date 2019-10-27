@@ -35,11 +35,10 @@ def call(){
            
           if (!fileExists("sonar-project.properties"))
             script += "-Dsonar.sources=\"./src\""
-          sh 'ls -lartR'
-          sh 'pwd'
-          echo "SCRIPT " script
 
           sh script
+          sh 'ls -lartR'
+          sh 'pwd'
             
         }
         timeout(time: 1, unit: 'HOURS') {
