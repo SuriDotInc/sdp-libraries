@@ -39,7 +39,7 @@ def call(){
           sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/script.sh"
           sh "id"
           sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/config.json"
-          sh "chmod -R ugo+x /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/script.sh"
+          sh "chmod a+x sonar-scanner"
           //sh "which sonar-scanner"
           sh "ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp"
           sh script
