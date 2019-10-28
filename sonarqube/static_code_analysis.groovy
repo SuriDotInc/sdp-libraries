@@ -39,7 +39,8 @@ def call(){
           sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/script.sh"
           sh "id"
           sh "cat /var/lib/jenkins/workspace/JenkinsDemo_master@tmp/*/config.json"
-          sh "chmod a+x sonar-scanner"
+          sh "docker ps -a"
+          sh "docker ps | grep sonar-scanner  | awk '{print $1}' | xargs  docker logs "
           //sh "which sonar-scanner"
           sh "ls -lartR /var/lib/jenkins/workspace/JenkinsDemo_master@tmp"
           sh script
